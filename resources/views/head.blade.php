@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}"></head>
 <body>
 <div class="col-6">
-<h1>Laravel Blog</h1>
+<h1>Laravel Blog</h1><!--
 <form method="POST" action="/posts/searchresults">
     {{csrf_field()}}
     <div >
@@ -19,7 +19,7 @@
     </div>
 
     <button type="submit">search</button>
-
+</form>-->
 @yield('content')
 </div>
 </body>

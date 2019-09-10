@@ -8,6 +8,7 @@
             <p>{{$post1->post}}</p>
             <li>{{$post1->tag}}</li>
         </ul>
+        <a href="/posts/post/{{$post1->id}}/edit">Edit</a>
     @endforeach
     <p><a href="../">Back</a></p>
 @stop

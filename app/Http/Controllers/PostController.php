@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
@@ -36,6 +37,22 @@ class PostController extends Controller
         $posts = \App\post::where('title',$searchresult)->get();
 
         return View::make('posts.searchresults')->with('posts',$posts)->with('searchresult',$searchresult);
+    }
+    public function edit(){
+        $id=request('id');
+        $users=\App\User::all();
+        $post = \App\post::where('id',$id)->get();
+        return View::make('posts.edit')->with('post',$post)->with('users',$users);
+    }
+    public function editconfirm(){
+        $id=request('id');
+        $users=\App\User::all();
+        $post = \App\post::where('id',$id)->first();
+        $post->title=request('title');
+        $post->post=request('post');
+        $post->save();
+        $post1 = \App\post::where('id',$id)->get();
+        return Redirect::action('PostController@show',array('id'=>$id));
     }
 
 }

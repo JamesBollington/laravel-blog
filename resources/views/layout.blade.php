@@ -15,7 +15,7 @@
     </div>
 
     <button type="submit">search</button>
-
+</form>
 @yield('content')
 </div>
 </body>

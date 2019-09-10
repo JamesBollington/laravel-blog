@@ -34,8 +34,12 @@ Route::post('posts','PostController@store');
 
 Route::get('posts/search','PostController@search');
 
-Route::post('posts/searchresults','PostController@searchresults');
+/*Route::post('posts/searchresults','PostController@searchresults');*/
 
 Route::get('posts/post/{id}','PostController@show');
+
+Route::post('posts/post/{id}/editconfirm','PostController@editconfirm');
+
+Route::get('posts/post/{id}/edit','PostController@edit');
 
 //
