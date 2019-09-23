@@ -10,7 +10,8 @@ class PostController extends Controller
     public function show() {
         $id=request('id');
         $post = \App\post::where('id',$id)->get();
-        return View::make('post')->with('post',$post);
+        $comments=\App\Comment::where('post',$id)->get();
+        return View::make('post')->with('post',$post)->with('comments',$comments);
     }
     public function users(){
         //$user=
@@ -54,5 +55,6 @@ class PostController extends Controller
         $post1 = \App\post::where('id',$id)->get();
         return Redirect::action('PostController@show',array('id'=>$id));
     }
+
 
 }

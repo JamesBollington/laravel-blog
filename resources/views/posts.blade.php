@@ -5,7 +5,7 @@
 
         <div class="card">
             <h2><a href="{{action('PostController@show',['id'=>$post->id])}}">{{$post->title}}</a></h2>
-            <p>By {{$post->user['name']}}</p>
+            <p>{{$post->author}}</p>
             <p>{{$post->post}}</p>
             <p>{{$post->tag}}</p>
         </div>

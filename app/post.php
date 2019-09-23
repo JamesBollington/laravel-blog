@@ -8,6 +8,9 @@ class post extends Model
 {
     //
     public function user(){
-        return $this->hasOne('App\User','id','author');
+        return $this->belongsTo('\App\User','id','author');
+    }
+    public function comments(){
+        return $this->hasMany('\App\Comment','post','id');
     }
 }
