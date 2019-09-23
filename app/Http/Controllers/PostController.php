@@ -28,7 +28,7 @@ class PostController extends Controller
         $post->title= request('title');
         $post->post= request('post');
         $post->save();
-        return redirect('/posts');
+        return redirect('/posts/post'.$post->post);
     }
     public function search() {
         return view('posts.search');
