@@ -42,6 +42,7 @@ Route::get('posts/search','PostController@search');
 
 Route::get('posts/post/{id}','PostController@show');
 
+Route::get('posts/user/{user}','PostController@user');
 
 Route::post('posts/post/{id}/editconfirm','PostController@editconfirm');
 

@@ -55,6 +55,13 @@ class PostController extends Controller
         $post1 = \App\post::where('id',$id)->get();
         return Redirect::action('PostController@show',array('id'=>$id));
     }
+    public function user() {
+        $user=request('user');
+        $posts=\App\post::where('author',$user)->get();
+        return View::make('posts')->with('posts',$posts);
+
+    }
+
 
 
 }
