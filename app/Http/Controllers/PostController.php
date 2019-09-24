@@ -16,8 +16,17 @@ class PostController extends Controller
     public function users(){
         //$user=
     }
+
+    public function tag(){
+        //public $tag=;
+        $posts=\App\post::whereHas('tags',function($q){
+            $q->where('name','=',request('tag'));
+        })->get();
+        return View::make('posts')->with('posts',$posts);
+    }
     public function all() {
         $posts = \App\post::all();
+        $tags= \App\Tag::find('');
         return View::make('posts')->with('posts',$posts);
     }
     public function create(){

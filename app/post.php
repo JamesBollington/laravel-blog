@@ -13,4 +13,8 @@ class post extends Model
     public function comments(){
         return $this->hasMany('\App\Comment','post','id');
     }
+    public function tags(){
+        //return $this->morphToMany('\App\Tag','taggable','taggables','tag_id');
+        return $this->belongsToMany('\App\Tag');
+    }
 }
