@@ -15,7 +15,7 @@ class UserController extends Controller
     public function showuser(){
         $id=Input::get('id');
         $user=\App\User::where('id',$id)->get();
-        return View::make('user')->with('user',$user);
+        return View::make('posts')->with('user',$user);
     }
     public function author(){
         $author=request('author');
